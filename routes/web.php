@@ -18,6 +18,12 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-//-----------------------------------------------------------------------------
+//-------------------------CATEGORIAS----------------------------------------------------
 
 Route::get ('/categoria/', [CategoriaController::class, 'index'])->name ('categoria.index');
+
+Route::get ('/categoria/create', [CategoriaController::class, 'create'])->name ('categoria.create');
+
+Route::POST ('/categoria', [CategoriaController::class, 'store'])->name ('categoria.store');
+
+Route::get ('/categoria/{id}', [CategoriaController::class, 'show'])->name ('categoria.show');

@@ -14,6 +14,7 @@
                         </div>
                     @endif
 
+                    {{ __('Os lek de konoha') }}
                 </div>
             </div>
         </div>
