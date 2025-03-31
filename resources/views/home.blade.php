@@ -14,7 +14,6 @@
                         </div>
                     @endif
 
-                    {{ __('wassup boyzzz') }}
                 </div>
             </div>
         </div>
