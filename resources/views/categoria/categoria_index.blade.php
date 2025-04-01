@@ -11,17 +11,29 @@
 
                     <a class = "btn btn-success" href ="{{ url ('categoria/create')}}">CRIAR</a>
 
+                        @if (session ('message'))
+                        <div class = "alert alert-success">
+                            {{ session('message') }}
+                        </div>
+                        @endif
+
+
                     <table class ="table">
                         <tr>
                           <th>ID</th>
                           <th>Nome</th>
                           <th>Ações</th>
                          </tr>
-                        @foreach ($categorias as $value)
+
+                         @foreach ($categorias as $value)
                         <tr>
                             <td>{{$value->id}}</td>
                             <td>{{$value->nome}}</td>
-                            <td><a class = "btn btn-danger" href = " {{url ('categoria/' . $value->id) }}" >Visualizar</a></td>
+                            <td>
+                            <a class = "btn btn-danger" href = " {{url ('categoria/' . $value->id) }}" >Visualizar</a>
+                            <a class = "btn btn-warning" href = ' {{url ('categoria/' . $value->id . '/edit') }}'>Editar</a>
+
+                        </td>
                           </tr>
                         @endforeach
 
