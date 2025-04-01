@@ -316,9 +316,9 @@ return [
             'text' => 'search',
         ],
         [
-            'text' => 'Categoria',
-            'url' => 'categoria',
-           //'can' => 'manage-blog',
+            'text' => 'blog',
+            'url' => 'admin/blog',
+            'can' => 'manage-blog',
         ],
         [
             'text' => 'pages',
