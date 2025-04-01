@@ -7,6 +7,12 @@
             <div class="card">
                 <div class="card-header">Categoria</div>
 
+                <script>
+                    function ConfirmDelete() {
+                        return confirm ('Tem certeza que deseja deletar?');
+                    }
+                </script>
+
                 <div class="card-body">
 
                     <a class = "btn btn-success" href ="{{ url ('categoria/create')}}">CRIAR</a>
@@ -32,6 +38,11 @@
                             <td>
                             <a class = "btn btn-danger" href = " {{url ('categoria/' . $value->id) }}" >Visualizar</a>
                             <a class = "btn btn-warning" href = ' {{url ('categoria/' . $value->id . '/edit') }}'>Editar</a>
+
+                            <form action = "{{ url ('categoria/' . $value->id) }}" method ="POST" onsubmit ='return ConfirmDelete()'>
+                                @method('DELETE')
+                                @csrf
+                                <button type = "submit" class = "btn btn-danger">Excluir  </button>
 
                         </td>
                           </tr>
