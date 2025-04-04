@@ -13,7 +13,7 @@ class PostagemController extends Controller
      */
     public function index()
     {
-        $postagens = Postagem::orderBy('nome', 'ASC')->get();
+        $postagens = Postagem::orderBy('titulo', 'ASC')->get();
         return view ('postagem.postagem_index', compact ('postagens'));
     }
 
@@ -31,18 +31,18 @@ class PostagemController extends Controller
     {
 
         $messages = [
-          'nome.required' => 'O nome é um campo obrigatório.' ,
+          'titulo.required' => 'O titulo é um campo obrigatório.' ,
 
         ];
 
         $validated = $request->validate([
-         'nome' => 'required|min:5',
+         'titulo' => 'required|min:5',
 
         ], $messages);
 
         //dd ($request->all());
         $postagem = new Postagem();
-        $postagem->nome = $request->nome;
+        $postagem->titulo = $request->titulo;
         $postagem->save();
 
         return redirect()->route('postagem.index')->with('message', 'Postagem cadastrada com sucesso!');
@@ -72,17 +72,17 @@ class PostagemController extends Controller
     public function update(Request $request, string $id)
     {
         $messages = [
-            'nome.required' => 'O nome é um campo obrigatório.' ,
+            'titulo.required' => 'O titulo é um campo obrigatório.' ,
 
           ];
 
           $validated = $request->validate([
-           'nome' => 'required|min:5',
+           'titulo' => 'required|min:5',
 
           ], $messages);
 
           $postagem = Postagem::find($id);
-          $postagem->nome = $request->nome;
+          $postagem->titulo = $request->titulo;
           $postagem->save();
 
           return redirect()->route('postagem.index')->with('message', 'Postagem atualizada com sucesso!');
