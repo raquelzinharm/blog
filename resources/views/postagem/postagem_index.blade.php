@@ -35,7 +35,7 @@
                          @foreach ($postagens as $value)
                         <tr>
                             <td>{{$value->id}}</td>
-                            <td>{{$value->categoria_id }}</td>
+                            <td>{{$value->categoria->nome }}</td>
                             <td>{{$value->titulo }}</td>
                             <td>
                             <a class = "btn btn-danger" href = " {{url ('postagem/' . $value->id) }}" >Visualizar</a>

@@ -22,7 +22,8 @@ class PostagemController extends Controller
      */
     public function create()
     {
-        return view ('postagem.postagem_create');
+        $categorias = Categoria::orderBy('nome', 'ASC')->get();
+        return view ('postagem.postagem_create', compact ('categorias'));
     }
     /**
      * Store a newly created resource in storage.
@@ -36,13 +37,16 @@ class PostagemController extends Controller
         ];
 
         $validated = $request->validate([
+         'categoria_id' => 'required',
          'titulo' => 'required|min:5',
-
+         'descricao' => 'required',
         ], $messages);
 
         //dd ($request->all());
         $postagem = new Postagem();
+        $postagem->categoria_id = $request->categoria_id;
         $postagem->titulo = $request->titulo;
+        $postagem->descricao = $request->descricao;
         $postagem->save();
 
         return redirect()->route('postagem.index')->with('message', 'Postagem cadastrada com sucesso!');
@@ -63,7 +67,8 @@ class PostagemController extends Controller
     public function edit(string $id)
     {
         $postagem = Postagem::find($id);
-        return view ('postagem.postagem_edit', compact ('postagem'));
+        $categorias = Categoria::orderBy('nome', 'ASC')->get();
+        return view ('postagem.postagem_edit', compact ('postagem','categorias'));
     }
 
     /**
@@ -77,12 +82,15 @@ class PostagemController extends Controller
           ];
 
           $validated = $request->validate([
+           'categoria_id' => 'required',
            'titulo' => 'required|min:5',
-
+           'descricao' => 'required',
           ], $messages);
 
           $postagem = Postagem::find($id);
+          $postagem->categoria_id = $request->categoria_id;
           $postagem->titulo = $request->titulo;
+          $postagem->descricao = $request->descricao;
           $postagem->save();
 
           return redirect()->route('postagem.index')->with('message', 'Postagem atualizada com sucesso!');

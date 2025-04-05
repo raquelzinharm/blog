@@ -18,20 +18,34 @@
                 @endif
 
 
-                <div class="card-body">
-
                    <form action = "{{ url ('postagem/' . $postagem->id) }}" method = 'POST'>
                     @method('PUT')
+
                     @csrf
 
-                    <div class ="form-group">
+                    <select name = "categoria_id" class = "form-control">
+                        @foreach ($categorias as $value)
 
-                        <label> Título: </label>
+                         @if ($value->id == $postagem->categoria_id)
+                             <option selected value = "{{ $value->id}}">{{ $value->nome }}</option>
+                         @else
+                             <option value = "{{ $value->id}}">{{ $value->nome }}</option>
 
-                        <input type = "text" name = "titulo" value = "{{ $postagem->titulo }}" class = "form-control">
-                    </div>
+                         @endif
 
-                    <button type = "submit" class ="btn btn-primary">Enviar</button>
+                         @endforeach
+
+
+                    </select>
+                    <label> Título: </label>
+                    <input type = "text"  value = "{{ $postagem->titulo }}" name = "titulo" class = "form-control">
+
+                    <label> Descrição: </label>
+                    <textarea name = "descricao" rows = "5" cols = "33" class="form-control">
+                        {{ $postagem->descricao }}
+                    </textarea>
+
+                        <button type = "submit" class ="btn btn-primary">Enviar</button>
 
                    </form>
 
@@ -39,5 +53,5 @@
             </div>
         </div>
     </div>
-</div>
+
 @endsection
