@@ -42,10 +42,8 @@
                             <form action = "{{ url ('categoria/' . $value->id) }}" method ="POST" onsubmit ='return ConfirmDelete()'>
                                 @method('DELETE')
                                 @csrf
-
                                 <button type = "submit" class = "btn btn-danger">Excluir  </button>
-
-                        </td>
+                            </form>             </td>
                           </tr>
                         @endforeach
 

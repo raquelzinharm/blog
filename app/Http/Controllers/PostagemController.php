@@ -33,7 +33,6 @@ class PostagemController extends Controller
 
         $messages = [
           'titulo.required' => 'O titulo é um campo obrigatório.' ,
-
         ];
 
         $validated = $request->validate([
@@ -76,7 +75,7 @@ class PostagemController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $messages = [
+            $messages = [
             'titulo.required' => 'O titulo é um campo obrigatório.' ,
 
           ];

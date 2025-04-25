@@ -72,13 +72,11 @@ class CategoriaController extends Controller
     {
         $messages = [
             'nome.required' => 'O nome é um campo obrigatório.' ,
-
           ];
 
-          $validated = $request->validate([
-           'nome' => 'required|min:5',
-
-          ], $messages);
+            $validated = $request->validate([
+                'nome' => 'required|min:5',
+            ], $messages);
 
           $categoria = Categoria::find($id);
           $categoria->nome = $request->nome;
