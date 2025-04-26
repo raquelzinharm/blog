@@ -49,6 +49,7 @@
                    <script>
                    var editor1 = new RichTextEditor("#inp_editor1");
                    </script>
+
                 </div>
             </div>
         </div>
