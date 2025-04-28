@@ -47,13 +47,17 @@
                     <input type = "text"  value = "{{ $postagem->titulo }}" name = "titulo" class = "form-control">
 
                     <label> Descrição: </label>
-                    <textarea name = "descricao" rows = "5" cols = "33" class="form-control">
+                    <textarea id ="inp_editor1" name = "descricao" rows = "5" cols = "33" class="form-control">
                         {{ $postagem->descricao }}
                     </textarea>
 
                         <button type = "submit" class ="btn btn-primary">Enviar</button>
 
                    </form>
+
+                    <script>
+                    var editor1 = new RichTextEditor("#inp_editor1");
+                    </script>
 
                 </div>
             </div>
