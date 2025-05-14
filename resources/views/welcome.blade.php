@@ -2,7 +2,6 @@
 
     @extends ('layouts.app')
 
-
     @section ('content')
     <!-- Main -->
     <section id="main">
@@ -15,14 +14,16 @@
 
                 </header>
                 <p>{!! $value->descricao!!}</p>
-                </section>
+
             </article>
 
             @endforeach
             <!-- Content -->
-
+            {{ $postagens->links() }}
         </div>
+
     </section>
+
     @endsection
 
 
