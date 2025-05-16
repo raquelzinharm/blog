@@ -24,7 +24,7 @@
 					<!-- Nav -->
 						<nav id="nav">
 							<ul>
-								<li class="current"><a href="{{ url ("/") }}">Principal</a></li>
+								<li class="current"><a href="{{ url ("/PostagemByCategoriaById") }}">Principal</a></li>
 								<li>
 									<a href="#">Categorias</a>
 									<ul>

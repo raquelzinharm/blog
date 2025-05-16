@@ -12,7 +12,7 @@ use App\Http\Controllers\SiteController;
 
 Route::get('/', [SiteController::class, 'index'])->name('site.index');
 
-Route::get('/', [SiteController::class, 'index'])->name('site.index');
+Route::get('/PostagemByCategoriaById/{id}', [SiteController::class, 'PostagemByCategoriaById'])->name('site.PostagemByCategoriaById');
 
 Auth::routes();
 
