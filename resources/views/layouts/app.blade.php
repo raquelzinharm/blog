@@ -21,34 +21,37 @@
 						<h1><a href="index.html">Dopetrope</a></h1>
 
 					<!-- Nav -->
-                    <nav id="nav">
-                        <li>
-                        <a href="#">Categorias</a>
-                        <ul>
-                             @foreach ($categorias as $value)
-                                    <li><a href="{{ url('/PostagemByCategoriaById/' . $value->id) }}">{{$value->nome}}</a></li>
-                                     @endforeach
-                                </ul>
-                            </li>
-                                <li>
-                                    <a href="#">Autores</a>
-                                    <ul>
-                                          @foreach ($autores as $value)
-                                    <li><a href="{{ url('/PostagemByAutorById/' . $value->id) }}">{{ $value->name }}</a></li>
-                                         @endforeach
+						<nav id="nav">
+							<ul>
+								<li class="current"><a href="{{ url("/") }}">Principal</a></li>
+								<li>
+									<a href="#">Categorias</a>
+									<ul>
+                                        @foreach ($categorias as $value)
+										    <li><a href="{{ url('/PostagemByCategoriaId/' . $value->id) }}">{{ $value->nome }}</a></li>
+                                        @endforeach
                                     </ul>
-                                </li>
-                            <li><a href="left-sidebar.html">Left Sidebar</a></li>
-                            <li><a href="right-sidebar.html">Right Sidebar</a></li>
-                            <li><a href="no-sidebar.html">No Sidebar</a></li>
-                        </ul>
-                    </nav>
+								</li>
+                                <li>
+									<a href="#">Autores</a>
+									<ul>
+                                        @foreach ($autores as $value)
+										    <li><a href="{{ url('/PostagemByAutorId/' . $value->id) }}">{{ $value->name }}</a></li>
+                                        @endforeach
+                                    </ul>
+								</li>
+								<li><a href="left-sidebar.html">Left Sidebar</a></li>
+								<li><a href="right-sidebar.html">Right Sidebar</a></li>
+								<li><a href="no-sidebar.html">No Sidebar</a></li>
+							</ul>
+						</nav>
 
         <div class="container">
             @yield('content')
         </div>
 
-    	<!-- Footer -->
+
+			<!-- Footer -->
 				<section id="footer">
 					<div class="container">
 						<div class="row">
@@ -91,7 +94,7 @@
 									<header>
 										<h2>What's this all about?</h2>
 									</header>
-									<a href="#" class="image featured"><img src="images/pic10.jpg" alt="" /></a>
+									<a href="#" class="image featured"><img src="{{ url("images/pic10.jpg") }}" alt="" /></a>
 									<p>
 										This is <strong>Dopetrope</strong> a free, fully responsive HTML5 site template by
 										<a href="http://twitter.com/ajlkn">AJ</a> for <a href="http://html5up.net/">HTML5 UP</a> It's released for free under
