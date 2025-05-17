@@ -14,6 +14,7 @@
                   <p>Categoria: {{$value->categoria->nome}} </p>
                 </header>
                 <p>{!! $value->descricao!!}</p>
+                <p>Autor: {{$value->autor->name}} </p>
 
             </article>
 

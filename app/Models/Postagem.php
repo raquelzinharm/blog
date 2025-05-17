@@ -16,4 +16,11 @@ class Postagem extends Model {
         return $this->hasOne(Categoria::class, 'id', 'categoria_id');
 
     }
+    public function autor(): HasOne {
+
+        //return $this->hasOne(Categoria::class);
+
+        return $this->hasOne(User::class, 'id', 'user_id');
+
+    }
 }
