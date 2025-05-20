@@ -58,11 +58,8 @@ Route::delete ('/postagem/{id}', [PostagemController::class, 'destroy'])->name (
 
 //Admin
 Route::get ('/admin/alterarSenha', [UserController::class, 'alterarSenha'])->name ('admin.alterarSenha');
+Route::put ('/admin/updateSenha', [UserController::class, 'updateSenha'])->name ('admin.updateSenha');
 
 
-Route::name('admin.')->group(function () {
-    Route::get('/users', function () {
-        // Route assigned name "admin.users"...
-    })->name('users');
-});
+
 });
