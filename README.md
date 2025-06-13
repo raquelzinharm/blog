@@ -64,3 +64,29 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+Passo a passo para rodar na web
+
+1) Crie o arquivo .env com base no arquivo .env.example
+Abra o terminal e execute o código entre aspas "copy .env.example .env"
+
+2) Mude o nome do banco no arquivo .env
+Altere esta parte do código para ficar igual esta abaixo.
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=meuprojeto
+DB_USERNAME=root
+DB_PASSWORD=
+3) Instale as depedências
+Abra o terminal e execute o código entre aspas "composer install"
+
+4) Gere a APP_KEY (chave de criptografia)
+Abra o terminal e execute o código entre aspas "php artisan key:generate"
+
+5) Rode as migrations (criação das tabelas)
+Abra o terminal e execute o código entre aspas "php artisan migrate"
+
+6) Rode os SEEDs (inserção dos dados nas tabelas)
+Abra o terminal e execute o código entre aspas "php artisan db:seed"

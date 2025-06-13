@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    {{ __('Os lek de konoha') }}
+                    {{ __('Blog pessoal.') }}
                 </div>
             </div>
         </div>
